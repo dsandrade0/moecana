@@ -134,73 +134,73 @@ EOD;
         <tr class="center">
           <td> {$o->nome} </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'jan\',\''.$o->jan.'\')'}>
               {$this->traduzir($o->jan)} 
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'fev\',\''.$o->fev.'\')'}>
               {$this->traduzir($o->fev)} 
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'mar\',\''.$o->mar.'\')'}>
               {$this->traduzir($o->mar)} 
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'abr\',\''.$o->abr.'\')'}>
               {$this->traduzir($o->abr)} 
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'mai\',\''.$o->mai.'\')'}>
               {$this->traduzir($o->mai)}
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'jun\',\''.$o->jun.'\')'}>
               {$this->traduzir($o->jun)}
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'jul\',\''.$o->jul.'\')'}>
               {$this->traduzir($o->jul)}
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'ago\',\''.$o->ago.'\')'}>
               {$this->traduzir($o->ago)} 
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'set\',\''.$o->set.'\')'}>
               {$this->traduzir($o->set)}
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'out\',\''.$o->out.'\')'}>
               {$this->traduzir($o->out)}
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'nov\',\''.$o->nov.'\')'}>
               {$this->traduzir($o->nov)} 
             </button>
           </td>
           <td> 
-            <button class="btn" 
+            <button class="btn btn-mini" 
               onclick={'pagamentoToggle('.$o->id.',\'dez\',\''.$o->dez.'\')'}>
               {$this->traduzir($o->dez)}
             </button>

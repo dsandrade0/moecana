@@ -43,23 +43,23 @@ EOD;
 
       if ($usuario->perfil == 1) {
         $tira_gol =
-          <button class="btn" 
+          <button class="btn btn-small" 
           onclick={'tiraGol('.$obj->id.','.$obj->gols.')'}>-1</button>; 
 
         $gol_1 =
-          <button class="btn" 
+          <button class="btn btn-small" 
           onclick={'gol1('.$obj->id.','.$obj->gols.')'}>+1</button>; 
 
         $gol_2 =
-          <button class="btn" 
+          <button class="btn btn-small" 
           onclick={'gol2('.$obj->id.','.$obj->gols.')'}>+2</button>; 
 
         $amarelo =
-          <button class="btn" 
+          <button class="btn btn-small" 
           onclick={'amarelo('.$obj->id.','.$obj->amarelo.')'}>+1</button>; 
 
         $vermelho =
-          <button class="btn" 
+          <button class="btn btn-small" 
           onclick={'vermelho('.$obj->id.','.$obj->vermelho.')'}>+1</button>; 
 
       }
