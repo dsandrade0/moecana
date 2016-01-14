@@ -32,7 +32,7 @@ class HomeController extends LayoutController {
             <form action="" method="post" 
               class="form-horizontal prepend-top pull-right">
               <input type="text" name="login" placeholder="login"/>
-              <input type="text" name="senha" placeholder="senha"/>
+              <input type="password" name="senha" placeholder="senha"/>
               <input type="submit" value="Entrar" class="btn"/>
             </form>
           </div>

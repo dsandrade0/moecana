@@ -1,6 +1,7 @@
 <?php
 final class ArtilhariaController extends LayoutController {
   private $tabela;
+  public $js = array('utils', 'artilharia');
 
   public function setContent() {
     return
@@ -19,6 +20,7 @@ final class ArtilhariaController extends LayoutController {
   }
   
   public function processRequest() {
+    $usuario = $_SESSION['usuario'];
     $conn = dbconn();
     $q =
       <<<EOD
@@ -35,12 +37,47 @@ EOD;
       </table>;
     $res = $conn->executeQuery($q);
     while ($obj = pg_fetch_object($res)) {
+      $gol_1;
+      $gol_2; 
+      $amarelo;
+      $vermelho;
+
+      if ($usuario->perfil == 1) {
+        $gol_1 =
+          <button class="btn" 
+          onclick={'gol1('.$obj->id.','.$obj->gols.')'}>+1</button>; 
+
+        $gol_2 =
+          <button class="btn" 
+          onclick={'gol2('.$obj->id.','.$obj->gols.')'}>+2</button>; 
+
+        $amarelo =
+          <button class="btn" 
+          onclick={'amarelo('.$obj->id.','.$obj->amarelo.')'}>+1</button>; 
+
+        $vermelho =
+          <button class="btn" 
+          onclick={'vermelho('.$obj->id.','.$obj->vermelho.')'}>+1</button>; 
+
+      }
+
+
       $this->tabela->appendChild(
         <tr class="success">
           <td> {$obj->nome} </td>
-          <td> <span class="badge badge-success">{$obj->gols}</span> </td>
-          <td> <span class="badge badge-warning">{$obj->amarelo}</span> </td>
-          <td> <span class="badge badge-important">{$obj->vermelho}</span> </td>
+          <td> 
+            <span class="badge badge-success">{$obj->gols}</span> 
+            {$gol_1}
+            {$gol_2}
+          </td>
+          <td>
+            <span class="badge badge-warning">{$obj->amarelo}</span> 
+            {$amarelo}
+          </td>
+          <td> 
+            <span class="badge badge-important">{$obj->vermelho}</span>
+            {$vermelho}
+          </td>
         </tr>
       ); 
     }

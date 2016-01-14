@@ -8,4 +8,6 @@ $map = array(
   '/pagamentos' => 'PagamentosController',
   '/jogador/cadastrar' => 'CadastrarJogadorController',
   '/jogador/alterar' => 'AlterarJogadorController',
+  '/api/gol' => 'AdicionarGolController', 
+  '/api/cartao' => 'AdicionarCartaoController', 
 );

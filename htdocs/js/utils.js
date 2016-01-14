@@ -13,5 +13,9 @@
 
     back: function() {
       window.history.go(-1);
+    },
+
+    reload: function() {
+      location.reload();
     }
   }
