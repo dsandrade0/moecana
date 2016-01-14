@@ -1,0 +1,54 @@
+h1. Instalação
+
+h3. Debian/Ubuntu
+
+Para o total funcionamento do dlite é necessário a instalação do XHP que sua instalação pode ser feita pelo "Installing, Configuring, and Using the XHP PHP Extension by Facebook":http:http://calvinf.com/blog/2010/02/10/installing-configuring-and-using-the-xhp-php-extension-by-facebook/ ou em "Building XHP":https://github.com/facebook/xhp/wiki/building-xhp.
+É também necessário ativar o módulo rewrite em servidor de aplicação, para ativar no Apache em seu linux faça:
+
+Para instalar o Apache como servidor faça:
+
+bc. # sudo apt-get install apache2
+
+É necessário habilitar o módulo rewrite no seu Apache então faça:
+
+bc. # sudo a2enmod rewrite
+
+E depois restarte o apache
+
+bc. # sudo service apache2 restart
+
+h1. Introdução
+
+dlite é um simples framework php que visa facilitar o aprendizado na linguagem e tranquilidade no desenvolvimento.
+O dlite trabalha em conjunto com o framework css Twitter Bootstrap para facilitar a criação de páginas web com um design interessante e simples, mas pode ser robusto se for bem implementado.
+
+h1. Arquitetura
+
+O dlite usa a idéia de que cada classe  pode ser chamada de controller e cada controller pode ser considerado uma tela, assim podemos usar a hierarquia entre telas para agilizar o desenvolvimento. Esse framework tem alguns arquivos de configuração interessantes e bem simples de entender. 
+
+h1. Mapeamento de url
+
+O primeiro arquivo de configuração é o application_configurarion.php, nele se encontra todo o mapeamento de url que será encontrado no sistema. Nele contém a url apontando para um controller, assim cada url necessita ser mapeada para um controller único.
+
+h1. Criando a primeira página.
+
+Para criar nossa primeira página é necessário primeiramente mapear nossa url, então vamos até o application_configuration.php e mapeamos nossa url.
+
+bc. <?php
+$map = array(
+  '/primeiraTela' =>  'PrimeiraTelaController',
+);
+
+Assim criamos nosso primeiro mapeamento, quando a url '/primeiraTela' aparecer será mapeada para o controller 'PrimeiraTelaControler'.
+Agora necessitamos criar nosso controller. Navegue até dlite/lib/controller/ lá crie uma pasta com o mesmo nome da url, no nosso caso 'primeiraTela/' e dentro dessa pasta criaremos nosso controller 'PrimeiraTelaController.php'.
+
+Então dentro desse controller colocamos o seguinte código.
+
+bc. <?php
+class PrimeiraTelaController extends WebController {
+  public function proccessRequest() {
+  }
+}
+
+Uala! Assim estará criada sua primeira tela
+
