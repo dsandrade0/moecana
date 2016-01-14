@@ -1,7 +1,7 @@
 <?php
 final class PagamentosController extends LayoutController {
   public $js = array('utils', 'pagamento');
-  private $jogadores;
+  private $jogadores, $valorArrecadado = 0;
 
   public function setContent() {
     return
@@ -9,7 +9,10 @@ final class PagamentosController extends LayoutController {
         <div class="row box">
           <div class="span12">
             <fieldset>
-              <legend> Pagamentos {date('Y')} </legend>
+              <legend>
+                Pagamentos {date('Y')} -
+                Total Arrecadado R$ {$this->valorArrecadado*20},00 
+              </legend>
               {$this->jogadores}
             </fieldset>
           </div>
@@ -123,6 +126,8 @@ EOD;
       return
         <img width="15px" height="15px" src={get_image('x.png')}/>;
     } else {
+
+      $this->valorArrecadado++;
       return
           <img width="15px" height="15px" src={get_image('ok.png')}/>;
     }
