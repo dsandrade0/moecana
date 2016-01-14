@@ -52,7 +52,7 @@ class :a:menu extends :x:element {
                   <li class="disabled">
                     <a href=""> Bem Vindo {$_SESSION['usuario']->nome} </a>
                   </li>
-                  <li class={($this->idmenu == "principal") ? 'active' : ''}> 
+                  <li class={($this->idMenu == "principal") ? 'active' : ''}> 
                     <a href="/principal"> Home </a> 
                   </li>
                   <li class={($this->idMenu == "pagamentos") ? 'active' : ''}> 

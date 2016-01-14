@@ -49,10 +49,38 @@ final class CadastrarJogadorController extends LayoutController {
         <<<EOD
 INSERT INTO jogador(nome, gols, amarelo, vermelho) VALUES($1, $2, $3, $4);
 EOD;
+
+      $q2 =
+        <<<EOD
+INSERT INTO
+pagamento(jogador, jan, fev,mar,abr,mai,jun,jul,ago,set,out,nov,dez, ano)
+(SELECT 
+  id, 
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  2016 
+FROM jogador
+WHERE id NOT IN (SELECT jogador FROM pagamento))
+EOD;
       $conn = dbconn();
       $res = $conn->execute($q, array($nome, $gols, $amarelo, $vermelho));
       if ($res) {
         add_msg(SUCCESS, 'Jogador cadastrado com sucesso.');
+      }
+
+      $res2 = $conn->executeQuery($q2);
+      if ($res2) {
+        add_msg(SUCCESS, 'Jogador adicionado as financas');
       }
     } 
   }

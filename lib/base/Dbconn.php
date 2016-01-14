@@ -47,8 +47,8 @@ final class Dbconn {
    * Função usada para UPDATE, INSERT e DELETE
    **/
   public function execute($query, $args = array()) {
-    $name = "execute".time();
-    $res = pg_prepare($this->conn, $name , $query);
+    $name = time();
+    $res = pg_prepare($this->conn, $name, $query);
     $this->result = pg_execute($this->conn, $name, $args);
     return $this->result;
   }
