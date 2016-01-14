@@ -37,12 +37,17 @@ EOD;
       </table>;
     $res = $conn->executeQuery($q);
     while ($obj = pg_fetch_object($res)) {
+      $tira_gol;
       $gol_1;
       $gol_2; 
       $amarelo;
       $vermelho;
 
       if ($usuario->perfil == 1) {
+        $tira_gol =
+          <button class="btn" 
+          onclick={'tiraGol('.$obj->id.','.$obj->gols.')'}>-1</button>; 
+
         $gol_1 =
           <button class="btn" 
           onclick={'gol1('.$obj->id.','.$obj->gols.')'}>+1</button>; 
@@ -66,6 +71,7 @@ EOD;
         <tr class="success">
           <td> {$obj->nome} </td>
           <td> 
+            {$tira_gol}
             <span class="badge badge-success">{$obj->gols}</span> 
             {$gol_1}
             {$gol_2}

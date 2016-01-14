@@ -8,6 +8,16 @@ function gol1(id, gol) {
   );
 }
 
+function tiraGol(id, gol) {
+  $.post(
+    '/api/gol', 
+    {'id': id, 'gol': gol-1}, 
+    function() {
+      Utils.reload(); 
+    }
+  );
+}
+
 function gol2(id, gol) {
   $.post(
     '/api/gol', 
