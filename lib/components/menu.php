@@ -34,7 +34,7 @@ class :a:menu extends :x:element {
 
     return
       <x:frag>
-        <div class="navbar navbar-fixed-top">
+        <div class=" row navbar navbar-fixed-top">
           <div class="navbar-inner">
             <div class="container">
             <button class="btn btn-navbar" data-target=".nav-collapse" 
@@ -73,7 +73,7 @@ class :a:menu extends :x:element {
                       <li> <a href="/jogador/alterar"> Alterar Jogador </a> </li>
                     </ul>
                   </li>
-                  <li class="offset5"> 
+                  <li class="pull-right"> 
                     <a href="/sair"> Sair </a> 
                   </li>
                 </ul>

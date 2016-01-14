@@ -6,14 +6,12 @@ final class ArtilhariaController extends LayoutController {
   public function setContent() {
     return
       <x:frag>
-        <div class="row box">
+        <div class="row">
           <div class="span12">
             <fieldset>
               <legend> Artilharia 2016 </legend>
-            </fieldset>
-            <div class="span12 center prepend-bottom">
               {$this->tabela}
-            </div>
+            </fieldset>
           </div>
         </div>
       </x:frag>;
@@ -27,7 +25,7 @@ final class ArtilhariaController extends LayoutController {
 SELECT * FROM jogador ORDER BY gols DESC;
 EOD;
     $this->tabela =
-      <table class="table-striped table-hover span10">
+      <table class="table-striped table-hover center span12">
         <tr>
           <th> NOME </th>
           <th> GOLS </th>

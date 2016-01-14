@@ -22,7 +22,7 @@ class Controller {
    */
 
   protected function getMsg() {
-    $html = <div class="span12 center"/>;
+    $html = <div class="row center"/>;
     $this->msg = 
       (!isset($_SESSION['msg_system'])) ? '' : $_SESSION['msg_system'];
     if ($this->msg){

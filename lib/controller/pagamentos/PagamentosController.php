@@ -10,8 +10,8 @@ final class PagamentosController extends LayoutController {
           <div class="span12">
             <fieldset>
               <legend> Pagamentos {date('Y')} </legend>
+              {$this->jogadores}
             </fieldset>
-            {$this->jogadores}
           </div>
         </div>
       </x:frag>;
@@ -24,7 +24,7 @@ final class PagamentosController extends LayoutController {
   
   public function processRequest() {
     $this->jogadores =
-      <table class="span11 table table-bordered prepend-bottom">
+      <table class="table table-bordered prepend-bottom">
         <tr>
           <th>NOME</th>
           <th>Jan</th>
@@ -121,10 +121,10 @@ EOD;
   private function traduzir($bool) {
     if ($bool == 'f') {
       return
-          <img src={get_image('x.png')}/>;
+        <img width="15px" height="15px" src={get_image('x.png')}/>;
     } else {
       return
-          <img src={get_image('ok.png')}/>;
+          <img width="15px" height="15px" src={get_image('ok.png')}/>;
     }
   }
 
