@@ -4,18 +4,11 @@
     },
 
     ip: function() {
-      if (window.XMLHttpRequest) { 
-        xmlhttp = new XMLHttpRequest();
-      } else {
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.open("GET", "http://api.hostip.info/get_html.php", false);
-      xmlhttp.send();
-
-      hostip = xmlhttp.responseText.split("\n");
-      var r = hostip[2].split(':')[1].replace(' ','');
-
-      return r;
+      var $ip;
+      var that = this;
+      $.getJSON('http://ipinfo.io', function(data) {
+        console.log(data); 
+      });
     },
 
     back: function() {

@@ -6,6 +6,7 @@ class :a:menu extends :x:element {
 
   protected function render() {
     $this->idMenu = $this->getAttribute('idMenu');
+    $usuario = $_SESSION['usuario'];
 
     try {
     if ($this->idMenu == -1) {
@@ -52,16 +53,28 @@ class :a:menu extends :x:element {
                     <a href=""> Bem Vindo {$_SESSION['usuario']->nome} </a>
                   </li>
                   <li class={($this->idmenu == "principal") ? 'active' : ''}> 
-                    <a href="principal"> Home </a> 
+                    <a href="/principal"> Home </a> 
                   </li>
                   <li class={($this->idMenu == "pagamentos") ? 'active' : ''}> 
-                    <a href="pagamentos"> Pagamentos </a> 
+                    <a href="/pagamentos"> Pagamentos </a> 
                   </li>
                   <li class={($this->idMenu == "artilharia") ? 'active' : ''}> 
-                    <a href="artilharia"> Artilharia </a> 
+                    <a href="/artilharia"> Artilharia </a> 
+                  </li>
+                  <li class={($this->idMenu == "jogador") 
+                    ? 'active dropdown' 
+                    : 'dropdown'}> 
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+                      Jogador 
+                      <b class="caret"></b>
+                    </a> 
+                    <ul class="dropdown-menu">
+                      <li> <a href="/jogador/cadastrar"> Cadastrar Jogador</a> </li>
+                      <li> <a href="/jogador/alterar"> Alterar Jogador </a> </li>
+                    </ul>
                   </li>
                   <li class="offset5"> 
-                    <a href="sair"> Sair </a> 
+                    <a href="/sair"> Sair </a> 
                   </li>
                 </ul>
               </div>

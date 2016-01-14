@@ -2,7 +2,7 @@
 class LayoutController extends WebController {
   
   protected function setTitle() {
-    return 'dlite';
+    return 'MoecanaFC';
   }
 
   protected function composeBody() {
@@ -13,7 +13,7 @@ class LayoutController extends WebController {
             {$this->composeMenu()} 
           </div>
           <div class="row">
-            <div class="span12">
+            <div class="span12 margin-top">
               {$this->getMsg()} 
             </div>
           </div>

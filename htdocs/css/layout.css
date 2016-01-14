@@ -7,8 +7,15 @@
   margin-right: 10px;
 }
 
+.margin-top {
+  margin-top: 40px;
+}
+
 .prepend-top {
   margin-top: 10px;
+}
+.prepend-bottom {
+  margin-bottom: 10px;
 }
 
 .login {
@@ -16,5 +23,5 @@
 }
 
 .box {
-  background: #cfcfcf;
+  background: #fff;
 }
