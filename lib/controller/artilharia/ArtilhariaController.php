@@ -25,7 +25,7 @@ final class ArtilhariaController extends LayoutController {
 SELECT * FROM jogador ORDER BY gols DESC;
 EOD;
     $this->tabela =
-      <table class="table-striped span10">
+      <table class="table-striped table-hover span10">
         <tr>
           <th> NOME </th>
           <th> GOLS </th>
@@ -36,7 +36,7 @@ EOD;
     $res = $conn->executeQuery($q);
     while ($obj = pg_fetch_object($res)) {
       $this->tabela->appendChild(
-        <tr>
+        <tr class="success">
           <td> {$obj->nome} </td>
           <td> <span class="badge badge-success">{$obj->gols}</span> </td>
           <td> <span class="badge badge-warning">{$obj->amarelo}</span> </td>
