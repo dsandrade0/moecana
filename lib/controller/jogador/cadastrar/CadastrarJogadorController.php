@@ -1,32 +1,38 @@
 <?php
 final class CadastrarJogadorController extends LayoutController {
+  private $form;
 
   public function setContent() {
     return
       <x:frag>
         <div class="row margin-top">
           <div class="span12">
-            <form action="#" method="post" class="box prepend-top">
-              <fieldset class="center">
-                <legend> Cadastro de Jogador </legend>
-                <label> Nome do jogador </label>
-                <input type="text" name="nome"/>
-                <label> Numero de gols </label>
-                <input type="number" name="gols"/>
-                <label> Cartões amarelos </label>
-                <input type="number" name="amarelo"/>
-                <label> Cartões vermelhos </label>
-                <input type="number" name="vermelho"/> <br/>
-                <input type="submit" 
-                  value="Cadastrar" class="btn btn-primary offset1"/>
-              </fieldset>
-            </form>
+            {$this->form}
           </div>
         </div> 
       </x:frag>;
   }
 
   public function processRequest() {
+    $usuario = $_SESSION['usuario'];
+    if ($usuario->perfil == 1) {
+      $this->form = 
+        <form action="#" method="post" class="box prepend-top">
+          <fieldset class="center">
+            <legend> Cadastro de Jogador </legend>
+            <label> Nome do jogador </label>
+            <input type="text" name="nome"/>
+            <label> Numero de gols </label>
+            <input type="number" name="gols"/>
+            <label> Cartões amarelos </label>
+            <input type="number" name="amarelo"/>
+            <label> Cartões vermelhos </label>
+            <input type="number" name="vermelho"/> <br/>
+            <input type="submit" 
+              value="Cadastrar" class="btn btn-primary offset1"/>
+          </fieldset>
+        </form>;
+    }
     if (is_post()) {
       $r = $this->getRequest();
       $nome = $r->getString('nome');
