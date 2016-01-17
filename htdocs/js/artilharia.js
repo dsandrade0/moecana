@@ -38,10 +38,30 @@ function amarelo(id, cartao) {
   );
 }
 
+function tiraAmarelo(id, cartao) {
+  $.post(
+    '/api/cartao', 
+    {'id': id, 'cartao': 'amarelo', 'numero': cartao-1}, 
+    function() {
+      Utils.reload(); 
+    }
+  );
+}
+
 function vermelho(id, cartao) {
   $.post(
     '/api/cartao', 
     {'id': id, 'cartao': 'vermelho', 'numero': cartao+1}, 
+    function() {
+      Utils.reload(); 
+    }
+  );
+}
+
+function tiraVermelho(id, cartao) {
+  $.post(
+    '/api/cartao', 
+    {'id': id, 'cartao': 'vermelho', 'numero': cartao-1}, 
     function() {
       Utils.reload(); 
     }

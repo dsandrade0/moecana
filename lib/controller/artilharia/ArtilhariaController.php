@@ -39,27 +39,37 @@ EOD;
       $gol_1;
       $gol_2; 
       $amarelo;
+      $tira_amarelo;
+      $tira_vermelho;
       $vermelho;
 
       if ($usuario->perfil == 1) {
         $tira_gol =
-          <button class="btn btn-small" 
+          <button class="btn btn-mini" 
           onclick={'tiraGol('.$obj->id.','.$obj->gols.')'}>-1</button>; 
 
         $gol_1 =
-          <button class="btn btn-small" 
+          <button class="btn btn-mini" 
           onclick={'gol1('.$obj->id.','.$obj->gols.')'}>+1</button>; 
 
         $gol_2 =
-          <button class="btn btn-small" 
+          <button class="btn btn-mini" 
           onclick={'gol2('.$obj->id.','.$obj->gols.')'}>+2</button>; 
 
+        $tira_amarelo =
+          <button class="btn btn-mini" 
+          onclick={'tiraAmarelo('.$obj->id.','.$obj->amarelo.')'}>-1</button>; 
+
         $amarelo =
-          <button class="btn btn-small" 
+          <button class="btn btn-mini" 
           onclick={'amarelo('.$obj->id.','.$obj->amarelo.')'}>+1</button>; 
 
+        $tira_vermelho =
+          <button class="btn btn-mini" 
+          onclick={'tiraVermelho('.$obj->id.','.$obj->vermelho.')'}>-1</button>; 
+
         $vermelho =
-          <button class="btn btn-small" 
+          <button class="btn btn-mini" 
           onclick={'vermelho('.$obj->id.','.$obj->vermelho.')'}>+1</button>; 
 
       }
@@ -75,10 +85,12 @@ EOD;
             {$gol_2}
           </td>
           <td>
+		  	{$tira_amarelo}
             <span class="badge badge-warning">{$obj->amarelo}</span> 
             {$amarelo}
           </td>
           <td> 
+		  	{$tira_vermelho}
             <span class="badge badge-important">{$obj->vermelho}</span>
             {$vermelho}
           </td>
