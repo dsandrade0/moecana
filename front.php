@@ -10,6 +10,9 @@ session_start();
 $GLOBALS['response'] = '';
 $GLOBALS['js_call'] = '';
 $GLOBALS['head'] = '';
+if(!isset($GLOBALS['connection'])) {
+	$GLOBALS['connection'] = null;
+}
 
 include_once 'application_configuration.php';
 require_once('lib/third/__init__.php');
@@ -17,7 +20,7 @@ include_once 'lib/base/__ini__.php';
 require_path('lib/base');
 require_path('lib/components');
 
-$_GET['__key__'] = ($_GET['__key__'] != "") ? $_GET['__key__'] : 'home';
+$_GET['__key__'] = (isset($_GET['__key__'])) ? $_GET['__key__'] : 'home';
 $uri = explode('/',$_GET['__key__']);
 $controller_class = null;
 $controller = null;

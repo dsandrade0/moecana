@@ -27,7 +27,7 @@ final class PagamentosController extends LayoutController {
   
   public function processRequest() {
     $this->jogadores =
-      <table class="table table-bordered prepend-bottom">
+      <table class="table table-bordered prepend-bottom table-hover">
         <tr>
           <th>NOME</th>
           <th>Jan</th>

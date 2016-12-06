@@ -2,7 +2,7 @@
 final class Dbconn {
   private $conn;
   private $result;
-  private $hasMemcache = true;
+  private $hasMemcache = false;
   private $mem;
 
   public function __construct() {
@@ -19,7 +19,7 @@ final class Dbconn {
 
   public function connect() {
     $this->conn = pg_connect(
-      "host=localhost
+      "host=equipeamigos.com
       port=5432
       dbname=moecana
       user=postgres
