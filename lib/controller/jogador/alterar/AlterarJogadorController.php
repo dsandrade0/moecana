@@ -1,6 +1,6 @@
 <?php
 final class AlterarJogadorController extends LayoutController {
-  public $js = array('altera');
+  public $js = array('alterar');
 	private $table;
 
 	public function setContent() {
