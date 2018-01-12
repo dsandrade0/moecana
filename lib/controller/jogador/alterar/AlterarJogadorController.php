@@ -46,7 +46,7 @@ EOD;
               class="btn">
                 Alterar
             </a>
-            <a href={"jogador/apagar/?id=".$o->id}>
+            <a href={"jogador/apagar/?id=".$o->id}
               class="btn btn-danger">
               Apagar
             </a>
