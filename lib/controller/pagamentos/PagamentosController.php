@@ -66,6 +66,7 @@ SELECT
 FROM jogador j, pagamento p
 WHERE p.ano=$1
   AND j.id=p.jogador
+  AND j.status = 1
 ORDER BY j.nome ASC
 EOD;
 

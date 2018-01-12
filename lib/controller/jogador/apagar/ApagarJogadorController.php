@@ -10,7 +10,7 @@ UPDATE jogador SET status=0 where id=$1;
 EOD;
     $conn = dbconn();
     if (is_post()) {
-      //$res = $conn->execute($q, array($id));
+      $res = $conn->execute($q, array($id));
       if ($res) {
         add_msg(SUCCESS, "Jogador excluido com sucesso");
       } else {

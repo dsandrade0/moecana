@@ -1,5 +1,6 @@
 <?php
 final class AlterarJogadorController extends LayoutController {
+  public $js = array('altera');
 	private $table;
 
 	public function setContent() {
@@ -26,7 +27,7 @@ final class AlterarJogadorController extends LayoutController {
 		$conn = dbconn();
 		$q =
 			<<<EOD
-SELECT nome, id FROM jogador ORDER BY nome ASC
+SELECT nome, id FROM jogador where status = 1 ORDER BY nome ASC
 EOD;
 		$this->table = <table class="table center table-hover table-striped"/>;
 		$this->table->appendChild(
@@ -41,14 +42,16 @@ EOD;
 				<tr>
 					<td>{$o->nome}</td>
           <td>
-            <a 
-              href={"/jogador/alterarNome?id=".$o->id} 
-              class="btn">
-                Alterar
-            </a>
-            <form method="post" action="/jogador/apagar">
+            <form id={'form'.$o->id} method="post" action="/jogador/apagar" class="form-inline">
+              <a 
+                href={"/jogador/alterarNome?id=".$o->id} 
+                class="btn">
+                  Alterar
+              </a>
               <input type="hidden" name="id" value={$o->id}/>
-              <input type="submit" class="btn btn-danger" value="Apagar"/>
+              <a class="btn btn-danger" onclick={'confirma('.$o->id.')'}> 
+                Apagar 
+              </a>
             </form>
           </td>
 				</tr>

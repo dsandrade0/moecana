@@ -22,7 +22,7 @@ final class ArtilhariaController extends LayoutController {
     $conn = dbconn();
     $q =
       <<<EOD
-SELECT * FROM jogador ORDER BY gols DESC;
+SELECT * FROM jogador where status = 1 ORDER BY gols DESC;
 EOD;
     $this->tabela =
       <table class="table-striped table-hover center span12">
