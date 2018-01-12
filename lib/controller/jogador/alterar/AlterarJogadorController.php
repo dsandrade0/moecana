@@ -40,7 +40,17 @@ EOD;
 			$this->table->appendChild (
 				<tr>
 					<td>{$o->nome}</td>
-					<td><a href={"/jogador/alterarNome?id=".$o->id} class="btn">Alterar</a></td>
+          <td>
+            <a 
+              href={"/jogador/alterarNome?id=".$o->id} 
+              class="btn">
+                Alterar
+            </a>
+            <a href={"jogador/apagar/?id=".$o->id}>
+              class="btn btn-danger">
+              Apagar
+            </a>
+          </td>
 				</tr>
 			);	
 		}
