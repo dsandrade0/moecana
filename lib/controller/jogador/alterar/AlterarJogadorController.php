@@ -46,10 +46,10 @@ EOD;
               class="btn">
                 Alterar
             </a>
-            <a href={"/jogador/apagar?id=".$o->id}
-              class="btn btn-danger">
-              Apagar
-            </a>
+            <form method="post" action="/jogador/apagar">
+              <input type="hidden" name="id" value={$o->id}/>
+              <input type="submit" class="btn btn-danger" value="Apagar"/>
+            </form>
           </td>
 				</tr>
 			);	
