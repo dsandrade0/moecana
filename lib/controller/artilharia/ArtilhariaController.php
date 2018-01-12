@@ -9,7 +9,7 @@ final class ArtilhariaController extends LayoutController {
         <div class="row">
           <div class="span12">
             <fieldset>
-              <legend> Artilharia 2016 </legend>
+              <legend> Artilharia {Date('Y')} </legend>
               {$this->tabela}
             </fieldset>
           </div>

@@ -68,7 +68,7 @@ pagamento(jogador, jan, fev,mar,abr,mai,jun,jul,ago,set,out,nov,dez, ano)
   false,
   false,
   false,
-  2016 
+  2017
 FROM jogador
 WHERE id NOT IN (SELECT jogador FROM pagamento))
 EOD;

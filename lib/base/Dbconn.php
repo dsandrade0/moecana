@@ -2,7 +2,7 @@
 final class Dbconn {
   private $conn;
   private $result;
-  private $hasMemcache = false;
+  private $hasMemcache = true;
   private $mem;
 
   public function __construct() {

@@ -10,6 +10,7 @@ $map = array(
   '/jogador/alterar' => 'AlterarJogadorController',
   '/jogador/alterarNome' => 'AlterarNomeController',
   '/api/gol' => 'AdicionarGolController', 
+  '/api/jogadores' => 'ListarJogadoresController', 
   '/api/cartao' => 'AdicionarCartaoController', 
   '/api/pagamento' => 'PagamentoToggleController', 
 );
