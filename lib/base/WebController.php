@@ -57,7 +57,7 @@ class WebController extends Controller {
   public function setJs() {
     $html = '';
     $html .= '
-			<script type="text/javascript" src="/htdocs/js/jquery.min.js"></script>
+			<script type="text/javascript" src="/htdocs/js/jquery.js"></script>
 			<script data-main="/htdocs/js/main" src="/htdocs/js/require.js"></script>
     	<script type="text/javascript" src="/htdocs/js/bootstrap.min.js"></script>';
 

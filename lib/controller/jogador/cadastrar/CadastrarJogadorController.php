@@ -68,9 +68,9 @@ pagamento(jogador, jan, fev,mar,abr,mai,jun,jul,ago,set,out,nov,dez, ano)
   false,
   false,
   false,
-  2017
+  2019
 FROM jogador
-WHERE id NOT IN (SELECT jogador FROM pagamento))
+WHERE id NOT IN (SELECT jogador FROM pagamento where ano = 2019))
 EOD;
       $conn = dbconn();
       $res = $conn->execute($q, array($nome, $gols, $amarelo, $vermelho));

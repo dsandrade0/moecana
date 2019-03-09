@@ -19,7 +19,7 @@ final class Dbconn {
 
   public function connect() {
     $this->conn = pg_connect(
-      "host=equipeamigos.com
+      "host=localhost
       port=5432
       dbname=moecana
       user=postgres
