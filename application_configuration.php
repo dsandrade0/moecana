@@ -6,6 +6,7 @@ $map = array(
   '/sair' => 'SairController',
   '/artilharia' => 'ArtilhariaController',
   '/pagamentos' => 'PagamentosController',
+  '/despesas' => 'DespesasController',
   '/jogador/cadastrar' => 'CadastrarJogadorController',
   '/jogador/alterar' => 'AlterarJogadorController',
   '/jogador/alterarNome' => 'AlterarNomeController',

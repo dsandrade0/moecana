@@ -61,6 +61,9 @@ class :a:menu extends :x:element {
                   <li class={($this->idMenu == "artilharia") ? 'active' : ''}> 
                     <a href="/artilharia"> Artilharia </a> 
                   </li>
+                  <li class={($this->idMenu == "despesas") ? 'active' : ''}> 
+                    <a href="/despesas"> Despesas </a> 
+                  </li>
                   <li class={($this->idMenu == "jogador") 
                     ? 'active dropdown' 
                     : 'dropdown'}> 
