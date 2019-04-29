@@ -11,7 +11,7 @@ final class PagamentosController extends LayoutController {
             <fieldset>
               <legend>
                 Pagamentos {date('Y')} -
-                Total Arrecadado R$ {$this->valorArrecadado*20},00 
+                Total Arrecadado R$ {$this->valorArrecadado*25},00 
               </legend>
               {$this->jogadores}
             </fieldset>
