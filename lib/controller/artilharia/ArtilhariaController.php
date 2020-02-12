@@ -31,6 +31,7 @@ EOD;
           <th> GOLS </th>
           <th> AMARELO </th>
           <th> VERMELHO </th>
+					<th> AZUL </th>
         </tr>
       </table>;
     $res = $conn->executeQuery($q);
@@ -42,6 +43,8 @@ EOD;
       $tira_amarelo;
       $tira_vermelho;
       $vermelho;
+			$tira_azul;
+			$azul;
 
       if ($usuario->perfil == 1) {
         $tira_gol =
@@ -72,8 +75,15 @@ EOD;
           <button class="btn btn-mini" 
           onclick={'vermelho('.$obj->id.','.$obj->vermelho.')'}>+1</button>; 
 
-      }
+        $tira_azul =
+          <button class="btn btn-mini" 
+          onclick={'tiraAzul('.$obj->id.','.$obj->azul.')'}>-1</button>; 
 
+        $azul =
+          <button class="btn btn-mini" 
+          onclick={'azul('.$obj->id.','.$obj->azul.')'}>+1</button>; 
+
+      }
 
       $this->tabela->appendChild(
         <tr class="success">
@@ -94,6 +104,11 @@ EOD;
             <span class="badge badge-important">{$obj->vermelho}</span>
             {$vermelho}
           </td>
+					<td> 
+				{$tira_azul}
+            <span class="badge badge-info">{$obj->azul}</span>
+						{$azul}
+					</td>
         </tr>
       ); 
     }

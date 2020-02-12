@@ -67,3 +67,23 @@ function tiraVermelho(id, cartao) {
     }
   );
 }
+
+function tiraAzul(id, cartao) {
+  $.post(
+    '/api/cartao', 
+    {'id': id, 'cartao': 'azul', 'numero': cartao-1}, 
+    function() {
+      Utils.reload(); 
+    }
+  );
+}
+
+function azul(id, cartao) {
+  $.post(
+    '/api/cartao', 
+    {'id': id, 'cartao': 'azul', 'numero': cartao+1}, 
+    function() {
+      Utils.reload(); 
+    }
+  );
+}

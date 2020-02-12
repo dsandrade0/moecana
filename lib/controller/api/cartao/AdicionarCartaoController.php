@@ -26,6 +26,14 @@ UPDATE jogador SET vermelho=$1 WHERE id=$2;
 EOD;
       }
 
+      if ($cartao == 'azul') {
+        $q =
+          <<<EOD
+UPDATE jogador SET azul=$1 WHERE id=$2;
+EOD;
+      }
+
+
       if (!$q) {
         return;
       }

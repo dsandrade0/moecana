@@ -6,4 +6,5 @@ $migrations_map = array(
   3 => 'StatusJogadorMigration',
 	4 => 'DespesasMigration',
 	5 => 'TipoMigration',
+	6 => 'CartaoAzulMigration',
 );
