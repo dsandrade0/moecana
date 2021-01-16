@@ -49,7 +49,7 @@ final class CadastrarJogadorController extends LayoutController {
         <<<EOD
 INSERT INTO jogador(nome, gols, amarelo, vermelho) VALUES($1, $2, $3, $4);
 EOD;
-
+      $ano = date('Y');
       $q2 =
         <<<EOD
 INSERT INTO
@@ -68,9 +68,9 @@ pagamento(jogador, jan, fev,mar,abr,mai,jun,jul,ago,set,out,nov,dez, ano)
   false,
   false,
   false,
-  2020
+  $ano
 FROM jogador
-WHERE id NOT IN (SELECT jogador FROM pagamento where ano = 2020))
+WHERE id NOT IN (SELECT jogador FROM pagamento where ano = $ano))
 EOD;
       $conn = dbconn();
       $res = $conn->execute($q, array($nome, $gols, $amarelo, $vermelho));
