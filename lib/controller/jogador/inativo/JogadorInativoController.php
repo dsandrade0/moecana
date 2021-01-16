@@ -1,6 +1,7 @@
 <?php
 final class JogadorInativoController extends LayoutController {
 
+  public $js = array('inativo');
   private $table;
 
   public function setContent() {
