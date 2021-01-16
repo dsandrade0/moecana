@@ -11,6 +11,7 @@ $map = array(
   '/jogador/alterar' => 'AlterarJogadorController',
   '/jogador/alterarNome' => 'AlterarNomeController',
   '/jogador/apagar' => 'ApagarJogadorController',
+  '/jogador/inativo' => 'JogadorInativoController',
   '/api/gol' => 'AdicionarGolController', 
   '/api/jogadores' => 'ListarJogadoresController', 
   '/api/cartao' => 'AdicionarCartaoController', 

@@ -12,9 +12,9 @@ EOD;
     if (is_post()) {
       $res = $conn->execute($q, array($id));
       if ($res) {
-        add_msg(SUCCESS, "Jogador excluido com sucesso");
+        add_msg(SUCCESS, "Jogador inativado com sucesso");
       } else {
-        add_msg(ERROR, "Erro ao excluir jogador");
+        add_msg(ERROR, "Erro ao inativar jogador");
       }
       send_redirect("/jogador/alterar");
     }

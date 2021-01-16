@@ -74,6 +74,7 @@ class :a:menu extends :x:element {
                     <ul class="dropdown-menu">
                       <li> <a href="/jogador/cadastrar"> Cadastrar Jogador</a> </li>
                       <li> <a href="/jogador/alterar"> Alterar Jogador </a> </li>
+                      <li> <a href="/jogador/inativos"> Jogador Inativo </a> </li>
                     </ul>
                   </li>
                   <li class="pull-right"> 

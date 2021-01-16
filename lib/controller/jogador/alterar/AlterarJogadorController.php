@@ -50,7 +50,7 @@ EOD;
               </a>
               <input type="hidden" name="id" value={$o->id}/>
               <a class="btn btn-danger" onclick={'confirma('.$o->id.')'}> 
-                Apagar 
+                Inativar
               </a>
             </form>
           </td>
