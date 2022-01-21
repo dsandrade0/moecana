@@ -45,7 +45,7 @@ final class PagamentosController extends LayoutController {
         </tr>
       </table>;
     $conn = dbconn();
-    $ano = date('Y');
+    $ano = 2021;
     $q =
       <<<EOD
 SELECT 
