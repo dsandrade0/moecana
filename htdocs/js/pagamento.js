@@ -7,3 +7,7 @@ function pagamentoToggle(id, mes, bool) {
     }
   );
 }
+
+$('#idAno').on('change', function () {
+    $('#idFormAno').submit();
+});

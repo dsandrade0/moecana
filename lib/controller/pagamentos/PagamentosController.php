@@ -2,10 +2,17 @@
 final class PagamentosController extends LayoutController {
   public $js = array('utils', 'pagamento');
   private $jogadores, $valorArrecadado = 0;
+  private $ano;
+  private $optAno;
 
   public function setContent() {
     return
       <x:frag>
+        <div class="row">
+            <form action="#" method="get" id="idFormAno">
+                {$this->optAno}
+            </form>
+        </div>
         <div class="row box">
           <div class="span12">
             <fieldset>
@@ -26,6 +33,17 @@ final class PagamentosController extends LayoutController {
   }
   
   public function processRequest() {
+    $r = $this->getRequest();
+    $this->ano = $r->getInt("ano", 2022);
+    $this->optAno = <select id="idAno" name="ano"/>;
+
+    $this->optAno.appendChild(
+      <x:frag>
+        <option {$this->ano == 2022 ? 'selected' : ''} value="2022">2022</option>
+        <option {$this->ano == 2021 ? 'selected' : ''} value="2021">2021</option>
+      </x:frag>
+    );
+
     $this->jogadores =
       <table class="table table-bordered prepend-bottom table-hover">
         <tr>
@@ -45,7 +63,7 @@ final class PagamentosController extends LayoutController {
         </tr>
       </table>;
     $conn = dbconn();
-    $ano = 2021;
+    $ano = $this->ano;
     $q =
       <<<EOD
 SELECT 
