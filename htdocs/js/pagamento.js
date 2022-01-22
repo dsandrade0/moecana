@@ -1,13 +1,17 @@
-function pagamentoToggle(id, mes, bool) {
+function pagamentoToggle(id, mes, bool, ano) {
   $.post(
     'api/pagamento',
-    {'id': id, 'mes': mes, 'atual': bool},
+    {'id': id, 'mes': mes, 'atual': bool, 'ano': ano},
     function() {
-      Utils.reload();
+      location.reload();
     }
   );
 }
 
-$('#idAno').on('change', function () {
-    $('#idFormAno').submit();
+$(document).ready(function() {
+    $('#idAno').on('change', function () {
+        console.log('teste')
+        $('#idFormAno').submit();
+    });
 });
+

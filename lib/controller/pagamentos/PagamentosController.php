@@ -8,8 +8,8 @@ final class PagamentosController extends LayoutController {
   public function setContent() {
     return
       <x:frag>
-        <div class="row">
-            <form action="#" method="get" id="idFormAno">
+        <div class="row" style={"margin-top: 20px;"}>
+            <form action="#" method="post" id="idFormAno">
                 {$this->optAno}
             </form>
         </div>
@@ -17,7 +17,7 @@ final class PagamentosController extends LayoutController {
           <div class="span12">
             <fieldset>
               <legend>
-                Pagamentos {date('Y')} -
+                Pagamentos {$this->ano} -
                 Total Arrecadado R$ {$this->valorArrecadado*25},00 
               </legend>
               {$this->jogadores}
@@ -34,13 +34,14 @@ final class PagamentosController extends LayoutController {
   
   public function processRequest() {
     $r = $this->getRequest();
+    print_r($r);
     $this->ano = $r->getInt("ano", 2022);
     $this->optAno = <select id="idAno" name="ano"/>;
 
-    $this->optAno.appendChild(
+    $this->optAno->appendChild(
       <x:frag>
-        <option {$this->ano == 2022 ? 'selected' : ''} value="2022">2022</option>
-        <option {$this->ano == 2021 ? 'selected' : ''} value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
       </x:frag>
     );
 
@@ -159,7 +160,7 @@ EOD;
           <td> {$o->nome} </td>
           <td> 
             <button class="btn btn-mini" 
-              onclick={'pagamentoToggle('.$o->id.',\'jan\',\''.$o->jan.'\')'}>
+              onclick={'pagamentoToggle('.$o->id.',\'jan\',\''.$o->jan.'\', '.$this->ano.')'}>
               {$this->traduzir($o->jan)} 
             </button>
           </td>
